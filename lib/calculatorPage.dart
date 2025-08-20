@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'calculatorController.dart';
 import 'package:get/get.dart';
+import 'controllers/calculatorController.dart';
+import 'routes/routes.dart';
 
 class calculatorPage extends StatelessWidget {
   const calculatorPage({super.key});
@@ -78,12 +79,15 @@ class calculatorPage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(
-                  top: 50,
-                ),
-                child: ElevatedButton(
-                  onPressed: controller.clear,
-                  child: Text("Clear"),
+                margin: const EdgeInsets.only(top: 50),
+                child: Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: controller.clear,
+                      child: const Text("Clear"),
+                    ),
+                    const SizedBox(height: 16),
+                  ],
                 ),
               ),
             ],
